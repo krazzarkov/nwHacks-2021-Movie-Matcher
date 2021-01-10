@@ -1,0 +1,24 @@
+{
+  "name": "netflix",
+  "version": "1.0.0",
+  "description": "idk what we are doing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^4.8.1",
+    "bootstrap": "^4.5.3",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.17.1",
+    "firebase": "^8.2.2",
+    "firebase-admin": "^9.4.2",
+    "jquery": "^3.5.1",
+    "mongoose": "^5.11.11",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "unirest": "^0.6.0"
+  }
+}

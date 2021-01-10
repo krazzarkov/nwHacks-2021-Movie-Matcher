@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Session</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+
+  <script>
+    var movies = <%- JSON.stringify(results) %>;
+
+    // carousel
+    let movie = 0
+
+    function update() {
+      var pic = movies[movie]['img']
+      var title = movies[movie]['title']
+
+      document.getElementById("img").src = pic
+      document.getElementById("title").innerHTML = title
+    }
+
+    function on_button(decision) {
+      
+      var request = new XMLHttpRequest()
+      request.open("GET", "/s/" + <%- code %> + "/" + movies[movie]["nfid"] + "/" + decision, true);
+      request.send(null);
+      movie++;
+
+      if (movie >= 5) {
+        window.location.href = "/r/" + <%- code %>;
+      }
+      // then request.opens backend show list
+
+      update();
+    }
+
+    window.onload = function(){
+      update();
+    };
+
+  </script>
+
+</head>
+
+<body style="background-color: #baf5ff">
+  <h1 style="text-align:center;">Your Session Code: <%= code %></h1>
+
+  <div style="text-align:center;">
+  <img style="text-align:center;" id="img" src=""/>
+  <div style="text-align:center;" id="title"></div>
+
+  <button style="text-align:center;" class="btn btn-danger" onclick="on_button('dislike')">Dislike</button>
+  <button style="text-align:center;" class="btn btn-success" onclick="on_button('like')">Like</button>
+  </div>
+</body>
+</html>
