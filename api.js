@@ -1,13 +1,13 @@
 //export function API() {
 module.exports = async function API(id) {
     var unirest = require("unirest");
-    // 5a8b5522a4msh449823e10fdc62cp1dddc0jsnd873c8d02a45
+    
     // var req = unirest("GET", "https://unogsng.p.rapidapi.com/search");
     return new Promise(resolve => {
         unirest
         .get("https://unogsng.p.rapidapi.com/search")
         .headers(
-            {"x-rapidapi-key": "5a8b5522a4msh449823e10fdc62cp1dddc0jsnd873c8d02a45",
+            {"x-rapidapi-key": "API KEY HERE",
                 "x-rapidapi-host": "unogsng.p.rapidapi.com",
                 "useQueryString": true
             })
