@@ -5,7 +5,7 @@ Simple Node.js website which allows two or more people to browse and pick movies
 The Process:
 
 1. User 1 picks a genre of movies and is given a session code
-2. User 2 enters session code and join's User 1's session.
+2. User 2 enters session code and joins User 1's session.
 3. Both users are presented the same movie choices and can either like or dislike a movie.
 4. After X amount of movies are browsed the website shows both User 1 and 2 a list of movies which they both mutually liked.
 
