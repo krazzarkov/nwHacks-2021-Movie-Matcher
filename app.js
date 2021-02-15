@@ -7,12 +7,12 @@ var fire = require('firebase-admin')
 var serviceAccount = require("C:/googlekey/netflix-95ee6-firebase-adminsdk-iweh5-1f7a5392f6.json");
 
 fire.initializeApp({     
-    apiKey: "AIzaSyC1wL4nH-uekI-xDF9LQp50jevbS8PfXj0",
-    authDomain: "netflix-95ee6.firebaseapp.com",
-    projectId: "netflix-95ee6",
-    storageBucket: "netflix-95ee6.appspot.com",
-    messagingSenderId: "354450595311",
-    appId: "1:354450595311:web:d6308bd4c10f2c3e27aa1a",
+    apiKey: "#APIKEYHERE",
+    authDomain: "#",
+    projectId: "#",
+    storageBucket: "#",
+    messagingSenderId: "#",
+    appId: "#",
     credential: fire.credential.cert(serviceAccount)
 });
 
