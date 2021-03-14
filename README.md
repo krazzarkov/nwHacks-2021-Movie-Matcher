@@ -11,4 +11,4 @@ The Process:
 
 This project uses Firebase to cache Netflix movies from the uNoGS API. Firebase is also used to store User sessions and movie choices.
 
-The project is still VERY rough and unstable with a lot of bugs.
+The project was created in under 48 hours and is still VERY rough and unstable with a lot of bugs.
